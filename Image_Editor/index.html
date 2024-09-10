@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link href="main.css" rel="stylesheet">
+		<title>Image Editor</title>
+	</head>
+	<body>
+		<input type="file" id="input_file">
+		<div id="div_download">
+			<input type="text" id="input_filename" value="00.png" placeholder="file name">
+			<input type="radio" name="image_type" id="radio_png" checked>png<br>
+			<input type="radio" name="image_type" id="radio_jpg">jpg
+			<input type="number" id="input_jpg" value="0.85" placeholder="JPEGの圧縮率"><br>
+			<button id="button_download" type="button">ダウンロード</button>
+			<a id="anchor">download</a>
+		</div>
+		<p id="p_state">
+			画像を選択
+		</p>
+		<div>
+			<input type="radio" name="radio" id="radio_resize" class="input_radio" checked>resize<br>
+			<input type="radio" name="radio" id="radio_enlarge" class="input_radio">enlarge<br>
+			<input type="radio" name="radio" id="radio_reverse" class="input_radio">reverse<br>
+			<input type="radio" name="radio" id="radio_space" class="input_radio">space<br>
+			<input type="radio" name="radio" id="radio_cut" class="input_radio">cut<br>
+			<input type="radio" name="radio" id="radio_insert" class="input_radio">insert<br>
+			<input type="radio" name="radio" id="radio_rotate" class="input_radio">rotate<br>
+		</div>
+		<div id="div_UI">
+			<div id="UI_resize" class="div_UI">
+				<input type="number" id="input_resize_width" placeholder="width">
+				<input type="number" id="input_resize_height" placeholder="height">
+				<input type="number" id="input_resize_ratio" placeholder="倍率">
+				<button id="button_resize" type="button">resize</button>
+			</div>
+			<div id="UI_enlarge" class="div_UI">
+				<input type="number" id="input_enlarge" placeholder="自然数">
+				<button id="button_enlarge" type="button">enlarge</button>
+			</div>
+			<div id="UI_reverse" class="div_UI">
+				<button id="button_reverse" type="button">左右反転</button>
+			</div>
+			<div id="UI_space" class="div_UI">
+				<input type="number" id="input_space_left" placeholder="left">
+				<input type="number" id="input_space_right" placeholder="right">
+				<input type="number" id="input_space_top" placeholder="top">
+				<input type="number" id="input_space_bottom" placeholder="bottom">
+				<input type="text" id="input_space_background" value="#000000ff" placeholder="background-color">
+				<button id="button_space" type="button">実行</button>
+			</div>
+			<div id="UI_cut" class="div_UI">
+				<input type="number" id="input_cut_left" placeholder="left">
+				<input type="number" id="input_cut_right" placeholder="right">
+				<input type="number" id="input_cut_top" placeholder="top">
+				<input type="number" id="input_cut_bottom" placeholder="bottom">
+				<button id="button_cut" type="button">cut</button>
+			</div>
+			<div id="UI_insert" class="div_UI">
+				<input type="file" id="input_file_insert">
+				<input type="number" id="input_insert_left" placeholder="left">
+				<input type="number" id="input_insert_top" placeholder="top">
+				<button id="button_insert" type="button">insert</button>
+				<button id="button_insert_done" type="button">done</button>
+				<button id="button_insert_cancel" type="button">cancel</button>
+			</div>
+			<div id="UI_rotate" class="div_UI">
+				<button id="button_rotate" type="button">rotate</button>
+			</div>
+		</div>
+		<input type="text" id="input_canvasSize" value="100%" placeholder="canvas.style.width">
+		<div id="div_canvasSize"></div>
+		<canvas id="canvas" width=1 height=1></canvas>
+		<div>
+			<script src="./lib/canvasLib.js"></script>
+			<script src="./lib/library.js"></script>
+			<script src="./script/constant.js"></script>
+			<script src="./script/eventListener.js"></script>
+			<script src="./script/main.js"></script>
+		</div>
+	</body>
+</html>
