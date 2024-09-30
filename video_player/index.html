@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<style>@charset "UTF-8";*{display:block;box-sizing:border-box;position:relative;font:100% sans-serif}html{height:100%}head,script{display:none}body{height:100%;margin:0;padding:8px}video{width:100%}</style>
+	</head>
+	<body>
+		<input type="file" id="input_file">
+		<input type="number" id="input_number" value="1" placeholder="再生速度">
+		<video controls muted playsinline preload="none"></video>
+		<script>(()=>{"use strict";(()=>{let e=document.getElementById("input_file"),t=document.getElementById("input_number"),l=document.querySelector("video");e.onchange=()=>{let t=e.files[0],n=URL.createObjectURL(t);l.src=n},t.oninput=()=>{let e=Number(t.value);l.playbackRate=e}})``})``;</script>
+	</body>
+</html>
