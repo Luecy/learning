@@ -2,13 +2,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width">
-		<link href="main.css" rel="stylesheet" type="text/css">
-		<title>Link</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1">
+		<style>@charset "UTF-8";*{box-sizing:border-box;position:relative;font:100% sans-serif;display:block}html{height:100%;margin:0;border:solid 0 #000;background-color:#fff}head,script{display:none}body{height:100%;margin:0;padding:8px}body,div{display:block}p{margin-bottom:1em}p,textarea{display:block}textarea{width:100%;border:solid 1px gray;padding:2px;resize:none;border-radius:2px;white-space:normal}textarea:focus{outline:0;border:solid 2px orange}button{border:solid 1px gray;border-radius:2px;padding:2px 7px;background-color:#f0f0f0}button:active{border-color:#909090;background-color:#f8f8f8}a{word-break:break-all}img{width:100%}</style>
+		<title>link join</title>
 	</head>
 	<body>
-		<textarea id="textarea" rows="4"></textarea>
-		<a id="anchor"></a>
-		<script src="main.js"></script>
+		<button type="button">All Clear</button>
+		<button type="button">clear 1</button>
+		<textarea rows=4></textarea>
+		<button type="button">clear 2</button>
+		<textarea rows=4></textarea>
+		<button type="button">clear 3</button>
+		<textarea rows=4></textarea>
+		<img></img>
+		<script>(()=>{"use strict";let e=e=>{let t=document.querySelectorAll(e);return 1===t.length?t[0]:t};(()=>{let t=e("textarea"),l=e("img"),n=localStorage,i=["linkText1","linkText2","linkText3"],r=()=>{let e=(()=>{let e="";for(let l=0;l<t.length;l++)e+=t[l].value;return e})``;l.src=e};for(let $=0;$<i.length;$++){let c=i[$];void 0===n[c]&&(n[c]=""),t[$].value=n[c]}r();for(let u=0;u<t.length;u++){let o=t[u],a=i[u];o.oninput=()=>{r(),n[a]=o.value}}{let d=100;l.addEventListener("click",()=>{d+=50,l.style.width=`${d}%`}),l.addEventListener("dblclick",()=>{d=100,l.style.width=`${d}%`})}{let s=e("button"),v=e=>{if(""===t[e].value){let l=i[e];n[l]=""}else t[e].value=""};s[0].onclick=()=>{v(0),v(1),v(2)};for(let k=0;k<3;k++)s[k+1].onclick=()=>{v(k)}}})``})``;</script>
 	</body>
 </html>
