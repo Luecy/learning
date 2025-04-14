@@ -1,0 +1,200 @@
+[Dīacrįtic̱Rūby verşion1.25.8.289]
+
+
+ă(ɐ)/æ/ à(ɒ)/ɒ/ ȁ/ɛ/ ǎ(ʌ)/ʌ/
+ā/eɪ/ â(ɑ)/ɑː/ á/ɔː/ ã/aɪ/ (a̋/oʊ/)
+ȧ/ə/ ä/ɨ/
+ă͟ȏ/aʊ/ ă͟ȗ/aʊ/
+ă͟e ă͟i ȁ͟i ă͟u à͟u
+â͟a ā͟e ã͟e ā͟i ã͟i ā͟y a̋͟o ā͟u á͟u a̋͟u á͟w e͟ā
+ä͟i ȧ͟i ȧ͟u i͟ä
+e͟a̋͟u
+ál̊ ál ãí âí ȧy̑ âĕ âé āô āȯ
+{ â͟u ãy̑ ãĕ ãé }
+
+ḃ/b/
+b̄/biː/
+{ b̂/p/ }
+
+ċ/k/ ç̇/s/ ĉ/tʃ/ ç̌/z/ (ḉ(ć)(ɕ)/ʃ/)
+c̄/siː/
+ĉ͟h ḉ͟h ċ͟h ĉ͟z s͟ḉ
+çȇ çȋ
+{ (č/dʒ/) č͟h }
+
+ḋ/d/ d́/t/ ð/ð/
+d̄/diː/
+ð͟h ð͟d
+{ ď(Ď)/dʒ/ (d̂/tʃ/) ď͟z d̂͟z }
+
+ĕ(ɛ)/ɛ/ è/ɪ/ ȅ/ɒ/ ě/ʌ/
+ē/iː/ ê(ɜ)/ɜː/ é/eɪ/ e̋/ɑː/ ẽ/uː/
+ë/ɨ/ ė(ǝ)/ə/
+ȇ/j/
+ȅ͟ʉ̑/ɔɪ/ ȅ͟w̑/oʊ/ ě͟ȏ/aʊ/
+a͟ĕ ĕ͟a i͟ĕ
+a͟ē ē͟a ē͟e ē͟i é͟i ē͟o ē͟y é͟y i͟ē o͟ē
+a͟ë ë͟e ë͟i ë͟o ë͟w ë͟y o͟ë
+ẽɵ
+{ ɇ/æ/ è͟e ĕ͟j̑ }
+
+ḟ/f/ f̌(ƒ)/v/
+f̄/ɛf/
+p̊͟ḟ
+
+ġ/g/ ĝ/dʒ/ ǧ/ʒ/ ǵ/k/ g̑/j/
+ḡ/dʒiː/
+ǵ͟h
+ġh̊ dĝ ĝe̊ ģe̊ ŋg̊ůe̊
+{ g̏/d/ (g̀/p/) g̀͟h }
+
+ḣ/h/ (ħ/f/ ȟ/v/)
+h̄/eɪtʃ/
+c͟ḣ c̊͟h̥ g͟ħ g̊͟h̥ p͟ħ p͟ȟ
+ḣȗ ḣw̑ c̊ḣ
+
+ĭ(ı)(İ)/ɪ/ ì/ɛ/ ȉ/æ/
+ī/aɪ/ î/ɜː/ í/iː/ i̋/ɑː/ ĩ/eɪ/
+ɨ̆(Ɨ̇)(ï)/ɨ/ ɨ̂/ə/
+ȋ/j/
+u͟ĭ e͟ī u͟ī
+ɨ̆͟e
+{ (ɨ̑/w/) ŭ͟ɨ̑/aʊ/ }
+
+j́/dʒ/ ǰ(ʝ)/ʒ/ j̑(ȷ)(J̇)/j/ j̀/h/
+j̄/dʒeɪ/ ĵ/iː/
+j̈(ɉ)/ɨ/
+
+k̇/k/
+k̄/keɪ/
+ċ͟k̥ k̇͟h̥
+
+ĺ/l/ ľ/ɹ/ ł/w/ (l̑/j/)
+l̄/ɛl/ ɫ/ɫ/
+l̑͟l
+{ l̑ ĺl̑ }
+
+ṁ/m/
+m̄/ɛm/ ḿ/m̩/
+mb̥ şḿ ⱦ͟hḿ
+
+ṅ/n/ ň(ŋ)/ŋ/ ñ(ɲ)/nj/
+n̄/ɛn/
+ň͟g g͟ñ ñ͟h
+g̊ṅ k̊ṅ ŋx̏
+
+ŏ/ɒ/ ò/ʌ/ ȍ/ʊ/ ǒ/ɪ/ õ/wʌ/
+ō/oʊ/ ô(ɔ)/ɔː/ ó/uː/ ő/ɜː/ ø̄/eɪ/
+ȯ/ə/ ö/ʉ/ ɵ/ɨ/
+ȏ/w/
+ŏ͟ȋ/ɔɪ/ ŏ͟y̑/ɔɪ/ ò͟ȗ/aʊ/ ò͟w̑/aʊ/
+ŏ͟l̑͟l̊/ɔɪ/
+ò͟e ò͟o ȍ͟o ò͟u ȍ͟u
+ō͟a ô͟a ō͟e ó͟e ø͟e ō͟o ó͟o ō͟u ô͟u ó͟u a͟ô
+ȯ͟i
+ȇó ōɨ
+ó͟e͟u
+{ ø̆/ɛ/ ơ/ɑː/ ŏ͟l̑ ơ͟u }
+
+ṗ/p/
+p̄/piː/
+p̊s ṗh̥
+
+q̇/k/ q̂/tʃ/
+q̄/kiuː/
+qȗ qů
+
+ṙ(ɾ)/r/ ȓ(ɍ)(ɹ)/ɹ/
+r̄/ɑːɹ/ ŕ/ɹ̩/
+rh̥ ẘr ŕe̊
+
+ṡ(ſ)/s/ ş(ś)/z/ ŝ(ʃ)/ʃ/ š/ʒ/
+s̄/ɛs/
+ṡ͟s ŝ͟h š͟h
+şȋ ṡȋ sẘ
+
+ṫ/t/ ţ̇/s/ ť(Ť)/d/ ţ̌/z/ t̀/k/ (ŧ(θ)/θ/ ⱦ/ð/)
+t̄/tiː/
+ŧ͟h ⱦ͟h
+t̊ṡ ţȋ ṫȋ ţ̌ȋ t̀l̇ d̥͟ṫ
+{ ţ́(t́)/ʃ/ ţ̀/ʒ/ ṫĺ }
+
+ŭ/ʌ/ ù(ʊ)/ʊ/ ȕ/ɪ/ ǔ/ɛ/
+ū/iuː/ û/ɜː/ ú/uː/
+u̇/ə/ ü/ʉ/ ʉ̈/iʉ/ ʉ̇/iə/ ʉ̏/ɨ/
+ȗ/w/ (ʉ̑/j/)
+e͟ū e͟û e͟ú e͟ʉ o͟ū o͟ú ū͟e
+e͟a͟ū o͟ù͟l̊
+{ ũ/f/ (ʉ̆/ɒ/) ʉ̆͟ȋ }
+
+v̇/v/ v́/f/
+v̄/viː/
+ve̊
+{ ʋ/w/ k̇ʋ }
+
+w̑/w/ w̌/v/ (ẅ(ʍ)/ʍ/)
+ẁ/ʊ/
+w̄/dʌ́bɫiuː/ w̋/uː/ (ŵ/iuː/)
+ẅ͟h e͟ŵ
+ẘḣ
+{ ẘ͟ħ }
+
+x́/ks/ x̀/gz/ x̋/s/ x̏/z/ ẋ/h/ x̂/ʃ/ ẍ/k/
+x̄/ɛks/
+{ x̌(χ)/krɪs/ x̆/krɒs/ x̃/trænz/ }
+
+y̑/j/
+y̆/ɪ/ y̌/ʌ/
+ȳ/waɪ/ ŷ/aɪ/ ý/ɜː/ y̋/iː/
+ÿ(ɏ)/ɨ/ ẏ/ə/
+a͟ŷ a͟y̋ e͟ŷ u͟y̋
+ẏr
+
+ż/z/ ẑ/ts/ ȥ/s/ (ž(ƶ)(ʒ)/ʒ/)
+z̄/zɛd/
+ž͟h
+zȋ tȥ
+{ ź/ziː/ z̀/θ/ }
+
+ß(ṡ͟s)
+þ(ŧ͟h)
+ꝥ(ⱦ͟h)
+
+æ(a͟e)
+æ̆(a͟ĕ) æ̀(ă͟e)
+ǣ(a͟ē) æ̂(ā͟e) æ̃(ã͟e)
+æ̈(a͟ë)
+
+œ(o͟e)
+œ̆(o͟ĕ) œ̀(ò͟e)
+œ̄(o͟ē) œ̂(ō͟e) œ́(ó͟e) œ̋(ø͟e)
+œ̈(o͟ë)
+œ́͟u(ó͟e͟u)
+
+ᵊ/ə/
+ᶤ/ɨ/
+{ ⁿ/n/ }
+
+ą(ả)/ˈ/
+a̦(a̓)(a̍)/ˌ/
+ạ[we̍aḵ vowǝl]
+a̯(a̤)[no̦nsyllɐbic]
+å(ḁ)[sīlǝnṯ lẻtter]
+a͟a[dīgrɐph]
+
+·[no̦n⹀strıct ſyllable bréak wi̦ꝥin wordş]
+⹀(a̱)[strıct ſyllable bréak wi̦ꝥin wordş]
+a̮[wǫrd bréak ąnd/ỏr streß bréak]
+
+
+/æ/ /ɛ/ /ɪ/ /ɒ/ /ʌ/ /ʊ/
+/ɑː/ /iː/ /ɔː/ /uː/ /ɜː/
+/aɪ̯, aɪ, æj/ /aʊ̯, aʊ, æw, ʌw/ /eɪ̯, eɪ, eː, ɛj/ /ɔɪ̯, ɔɪ, ɒj/ /oʊ̯, oʊ, oː, ɒw/ /i̯u, iuː/
+/ə/ /ɨ/ /ʉ/ /i̯ʉ, iʉ/ /i̯ə, iə/
+/ɹ̩/ /ɫ̩, ɫ/ /m̩/
+/j/ /w/ /ʍ/ /r/ /ɹ/ /l/
+/m/ /n/ /ŋ/
+/p/ /b/ /t/ /d/ /k/ /g/
+/f/ /v/ /θ/ /ð/ /s/ /z/ /ʃ/ /ʒ/ /h/
+/t͡ʃ, tʃ/ /d͡ʒ, dʒ/
+/ˈ, á/ /ˌ, à/ /./
