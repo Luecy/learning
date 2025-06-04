@@ -7,14 +7,16 @@
 		<title>link join</title>
 	</head>
 	<body>
-		<button type="button">All Clear</button>
-		<button type="button">clear 1</button>
 		<textarea rows=4></textarea>
-		<button type="button">clear 2</button>
+		<button type="button">clear</button>
 		<textarea rows=4></textarea>
-		<button type="button">clear 3</button>
 		<textarea rows=4></textarea>
 		<img></img>
-		<script>(()=>{"use strict";let e=e=>{let t=document.querySelectorAll(e);return 1===t.length?t[0]:t};(()=>{let t=e("textarea"),l=e("img"),n=localStorage,i=["linkText1","linkText2","linkText3"],r=()=>{let e=(()=>{let e="";for(let l=0;l<t.length;l++)e+=t[l].value;return e})``;l.src=e};for(let $=0;$<i.length;$++){let c=i[$];void 0===n[c]&&(n[c]=""),t[$].value=n[c]}r();for(let u=0;u<t.length;u++){let o=t[u],a=i[u];o.oninput=()=>{r(),n[a]=o.value}}{let d=100;l.addEventListener("click",()=>{d+=50,l.style.width=`${d}%`}),l.addEventListener("dblclick",()=>{d=100,l.style.width=`${d}%`})}{let s=e("button"),v=e=>{if(""===t[e].value){let l=i[e];n[l]=""}else t[e].value=""};s[0].onclick=()=>{v(0),v(1),v(2)};for(let k=0;k<3;k++)s[k+1].onclick=()=>{v(k)}}})``})``;</script>
+		<img></img>
+		<img></img>
+		<img></img>
+		<script>
+			(()=>{"use strict";let e=e=>{let t=document.querySelectorAll(e);return 1===t.length?t[0]:t};(()=>{let t=e("textarea"),l=e("img"),n=self.localStorage,i=["linkText1","linkText2","linkText3"],r=()=>{let e=t[1].value.split("\n");for(let n=0;n<e.length;n++)l[n].src=t[0].value+e[n]+t[2].value};for(let a=0;a<i.length;a++){let $=i[a];void 0===n[$]&&(n[$]=""),t[a].value=n[$]}r();for(let o=0;o<t.length;o++){let u=t[o],c=i[o];u.oninput=()=>{r(),n[c]=u.value}}for(let v=0;v<l.length;v++){let d=l[v],s=100;d.addEventListener("click",()=>{s+=50,d.style.width=`${s}%`}),d.addEventListener("dblclick",()=>{s=100,d.style.width=`${s}%`})}e("button").onclick=()=>{t[1].value=""}})``})``;
+		</script>
 	</body>
 </html>
