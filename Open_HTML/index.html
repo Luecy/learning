@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Open HTML</title>
+	</head>
+	<body>
+		<input type="file" id="input">
+		<a id="a">link</a>
+		<script>
+			input.oninput = () => {
+				URL.revokeObjectURL(a.href);
+				a.href = URL.createObjectURL(input.files[0]);
+			};
+		</script>
+	</body>
+</html>
