@@ -9,10 +9,7 @@
 		<input type="file" id="input">
 		<a id="a">link</a>
 		<script>
-			input.oninput = () => {
-				URL.revokeObjectURL(a.href);
-				a.href = URL.createObjectURL(input.files[0]);
-			};
+			(()=>{"use strict";let e=localStorage,t="Open_HTML";if(e[t]){let c=new Blob([e[t]],{type:"text/html"});a.href=URL.createObjectURL(c)}input.oninput=async()=>{let c=input.files[0];if(c){{let r=await c.text();e.setItem(t,r)}URL.revokeObjectURL(a.href),a.href=URL.createObjectURL(c)}}})``;
 		</script>
 	</body>
 </html>
