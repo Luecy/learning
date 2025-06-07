@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>base64 encoder</title>
+		<style>
+			@charset "UTF-8";body,html,textarea{height:100%}body,canvas,textarea{width:100%}button,input{display:inline}*{display:block;box-sizing:border-box;position:relative;font:100% sans-serif}head,script{display:none}body{margin:0;padding:8px}p{margin-bottom:1em}#div_textarea{width:100%;height:0%;padding-top:100%}textarea{position:absolute;top:0;left:0;border:1px solid gray;padding:2px;resize:none;border-radius:2px;white-space:pre}textarea:focus{outline:0;border:2px solid orange}button{border:1px solid gray;border-radius:2px;padding:2px 7px;background-color:#f0f0f0}button:active{border-color:#909090;background-color:#f8f8f8}
+		</style>
+	</head>
+	<body>
+		<input type="file" id="input_file">
+		<input type="text" id="input_filename" value="00.txt" placeholder="file name">
+		<a id="anchor">download</a>
+		<input type="checkbox" id="checkbox_dataURL" checked>DataURL
+		<button type="button" id="button_encode">エンコード</button>
+		<button type="button" id="button_decode">デコード</button>
+		<div id="div_textarea">
+			<textarea></textarea>
+		</div>
+		<script>
+			(()=>{"use strict";let e=e=>{let t=document.querySelectorAll(e);return 1===t.length?t[0]:t},t=(e,t=!0)=>new Promise(l=>{let a=new FileReader;a.readAsDataURL(e),a.onload=()=>{let e=a.result;t||(e=e.replace(/data:.*,/,"")),l(e)}}),l=e=>{let t=atob(e.replace(/data:.*,/,"")),l=new Uint8Array(t.length);for(let a=0;a<t.length;a++)l[a]=t.charCodeAt(a);return new Blob([l])},a=e("#input_file"),n=e("#input_filename"),r=e("#anchor"),c=e("#checkbox_dataURL"),o=e("#button_encode"),u=e("#button_decode"),i=e("textarea");o.onclick=async()=>{let e;if(i.value)e=new Blob([i.value],{type:"text/plain"});else if(!(e=a.files[0]))return;{let l=await t(e,c.checked),o=new Blob([l]);i.value=l,URL.revokeObjectURL(r.href),r.href=URL.createObjectURL(o),r.download=n.value}},u.onclick=async()=>{let e;if(i.value)e=i.value;else{let t=a.files[0];if(!t)return;e=await t.text()}let c=l(e);URL.revokeObjectURL(r.href),r.href=URL.createObjectURL(c),r.download=n.value,i.value=await c.text()}})``;
+		</script>
+	</body>
+</html>
