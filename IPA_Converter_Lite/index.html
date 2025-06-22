@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<style>
+			body,div,html,textarea,textarea:focus{all:initial;display:block;box-sizing:border-box;position:relative;width:100%;font-size:100%;font-family:sans-serif;line-height:1.5}body,html{height:100%}head,script{display:none}#div_converter{height:100%;padding:calc(1rem / 16 * 2)}#div_IPA{height:50%;padding-bottom:calc(1rem / 16)}#div_XSAMPA{height:50%;padding-top:calc(1rem / 16)}textarea,textarea:focus{height:100%;border:calc(1rem / 16) solid gray;padding:calc(1rem / 16) calc(1rem / 16 * 3);resize:none;border-radius:calc(1rem / 16 * 2);white-space:pre}textarea:focus{outline:0;border:calc(1rem / 16 * 2) solid orange;padding:0 calc(1rem / 16 * 2)}
+		</style>
+		<title>IPA Converter Lite</title>
+	</head>
+	<body>
+		<div id="div_converter">
+			<div id="div_IPA">
+				<textarea id="textarea_IPA"></textarea>
+			</div>
+			<div id="div_XSAMPA">
+				<textarea id="textarea_XSAMPA"></textarea>
+			</div>
+		</div>
+		<script>
+			(()=>{"use strict";let $="convertXsampaToIpa.js";if(!0===self.hasOwnProperty($))throw Error(`[self.${$}] is in conflict`);let u=$=>$.replace(/\\/g,"\\\\").replace(/\*/g,"\\*").replace(/\./g,"\\.").replace(/\+/g,"\\+").replace(/\^/g,"\\^").replace(/\|/g,"\\|").replace(/\[/g,"\\[").replace(/\]/g,"\\]").replace(/\(/g,"\\(").replace(/\)/g,"\\)").replace(/\?/g,"\\?").replace(/\$/g,"\\$").replace(/\{/g,"\\{").replace(/\}/g,"\\}"),e=[["_T\\","̋"],["_H\\","́"],["_M\\","̄"],["_L\\","̀"],["_B\\","̏"],["_R","̌"],["_F","̂"],["_r\\","˔"],["_h\\","ʱ"],["b_<","ɓ"],["d`","ɖ"],["d\\","ȡ"],["d_<","ɗ"],["g_<","ɠ"],["h\\","ɦ"],["j\\","ʝ"],["l`","ɭ"],["l\\","ɺ"],["n`","ɳ"],["n\\","ȵ"],["p\\","ɸ"],["r\\`","ɻ"],["r\\","ɹ"],["s`","ʂ"],["s\\","ɕ"],["t`","ʈ"],["t\\","ȶ"],["v\\","ʋ"],["x\\","ɧ"],["z`","ʐ"],["z\\","ʑ"],["B\\","ʙ"],["G\\_<","ʛ"],["G\\","ɢ"],["H\\","ʜ"],["I\\","ᵻ"],["J\\_<","ʄ"],["J\\","ɟ"],["K\\","ɮ"],["L\\","ʟ"],["M\\","ɰ"],["N\\","ɴ"],["O\\","ʘ"],["R\\","ʀ"],["U\\","ᵿ"],["V\\","ⱱ"],["X\\","ħ"],['_"',"̈"],["_+\\","˖"],["_+","̟"],["_-\\","˗"],["_-","̠"],["_0\\","̊"],["_0","̥"],["_>","ʼ"],["_?\\","ˤ"],["_^","̯"],["_}","̚"],["_=\\","˭"],["_=","̍"],["_~","̃"],["_/","̌"],["_\\","̂"],["_A","̘"],["_a","̺"],["_B","˩"],["_c","̜"],["_d","̪"],["_e","̴"],["<F>","↘"],["_G","ˠ"],["_H","˦"],["_h","ʰ"],["_j","ʲ"],["_k","̰"],["_L","˨"],["_l","ˡ"],["_M","˧"],["_m","̻"],["_N","̼"],["_n","ⁿ"],["_O","̹"],["_o\\","˕"],["_o","̞"],["_q","̙"],["<R>","↗"],["_r","̝"],["_T","˥"],["_t","̤"],["_v","̬"],["_w","ʷ"],["_X","̆"],["_x","̽"],["3\\","ɞ"],["3`","ɝ"],["5\\","ȴ"],["r`","ɽ"],["<\\","ʢ"],[">\\","ʡ"],["?\\","ʕ"],["@\\","ɘ"],["@`","ɚ"],["!\\","ǃ"],["|\\|\\","ǁ"],["|\\","ǀ"],["||","‖"],["=\\","ǂ"],[":\\","ˑ"],["-\\","‿"],["A","ɑ"],["B","β"],["C","\xe7"],["D","\xf0"],["E","ɛ"],["F","ɱ"],["G","ɣ"],["g","ɡ"],["H","ɥ"],["I","ɪ"],["J","ɲ"],["K","ɬ"],["L","ʎ"],["M","ɯ"],["N","ŋ"],["O","ɔ"],["P","ʋ"],["Q","ɒ"],["R","ʁ"],["S","ʃ"],["T","θ"],["U","ʊ"],["V","ʌ"],["W","ʍ"],["X","χ"],["Y","ʏ"],["Z","ʒ"],["&","ɶ"],["{","\xe6"],["}","ʉ"],["1","ɨ"],["2","\xf8"],["3","ɜ"],["4","ɾ"],["5","ɫ"],["6","ɐ"],["7","ɤ"],["8","ɵ"],["9","œ"],["?","ʔ"],["@","ə"],['"',"ˈ"],["%","ˌ"],[":","ː"],["^","ꜛ"],["!","ꜜ"],["=","̩"],["`","˞"],["~","̃"],["'","ʲ"],["-","͡"]];for(let c=0;c<e.length;c++){let _=e[c];_[0]=u(_[0]),_[0]="(?<!\\*)"+_[0],_[0]=RegExp(_[0],"g")}let a=$=>{for(let u of e)$=$.replace(u[0],u[1]);return $=$.replace(/\*/g,"")};self[$]=Object.preventExtensions({convertXsampaToIpa:a}),Object.defineProperty(self[$],"convertXsampaToIpa",{writable:!1}),Object.defineProperty(self,$,{writable:!1,configurable:!1})})``;
+			(()=>{"use strict";let{convertXsampaToIpa:e}=self["convertXsampaToIpa.js"],t=document.querySelector("#div_converter"),r=document.querySelector("#textarea_IPA"),l=document.querySelector("#textarea_XSAMPA"),a=(()=>{try{return self.localStorage}catch{return}})``,n="IPA_Converter_Lite",o=()=>{t.scrollIntoView()},s=()=>{r.value=e(l.value)},c=()=>{try{a.setItem(n,l.value)}catch{}},i=()=>{let e;try{(e=a.getItem(n))||(e="")}catch{e=""}l.value=e,s()},u=()=>{l.addEventListener("input",()=>{o(),s(),c()})},d=()=>{l.addEventListener("scroll",()=>{r.scrollTop=l.scrollTop}),r.addEventListener("scroll",()=>{l.scrollTop=r.scrollTop})},v=()=>{visualViewport.addEventListener("resize",()=>{t.style.height=visualViewport.height+"px",o()})},y=()=>{let e=" 'NotoSans', sans-serif ";r.addEventListener("input",()=>{if("font"===r.value){let t=document.createElement("style");t.innerText=" @font-face { font-family: 'NotoSans'; src: url('https://luecy.github.io/learning/fonts/NotoSans-Regular.ttf'); } ",document.head.appendChild(t),r.style.fontFamily=e,l.style.fontFamily=e}})};i(),u(),d(),v(),y()})``;
+		</script>
+	</body>
+</html>
