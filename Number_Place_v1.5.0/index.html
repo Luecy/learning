@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>ナンプレ</title>
+		<script>
+			(()=>{"use strict";let e=(e,t,r="self",l=!1)=>{let o=e=>{let t=e.split("."),r=self;for(let l of t)r=r[l];return r},n=(e="self",t=[""])=>{"string"==typeof t&&(t=[t]);let r=o(e);for(let l of t)try{if(!0===r.hasOwnProperty(l))throw Error(`[${e}.${l}] is in conflict`)}catch(n){console.error(n)}};!1===Array.isArray(e)&&(e=[e]),!1===Array.isArray(t)&&(t=[t]),n(r,e),r=o(r);for(let i=0;i<t.length;i++)Object.defineProperty(r,e[i],{value:t[i],configurable:l,writable:l,enumerable:!0})};e("defineProperty",e),e("$",e=>{let t=document.querySelectorAll(e);return 1===t.length?t[0]:t}),e("dataURL",function(){return new Promise(e=>{let t=new FileReader;t.readAsDataURL(this),t.onload=()=>{e(t.result)}})},"Blob.prototype")})``;
+			(()=>{"use strict";let t="WebStorage";if(!0===self.hasOwnProperty(t))throw Error(`[self.${t}] is in conflict`);let e=(()=>{let t=class{static #a=new Set;group;storage;constructor(e="",r="localStorage"){this.group=(()=>{if(""===(e=String(e))&&(e=`${t.#a.size}_`),t.#a.has(e))throw Error("[WebStorage.group] is in conflict");return t.#a.add(e),e})``,this.storage=(()=>{"sessionStorage"!==r&&(r="localStorage");try{return self[r]}catch{return null}})``,Object.defineProperty(this,"group",{configurable:!1,writable:!1}),Object.defineProperty(this,"storage",{configurable:!1,writable:!1})}set(t,e){t=this.group+String(t),e=String(e);try{this.storage.setItem(t,e)}catch{return null}}get(t){t=this.group+String(t);try{return this.storage.getItem(t)}catch{return null}}remove(t){t=this.group+String(t);try{this.storage.removeItem(t)}catch{return null}}getKeys(t=!0){let e=[];try{let r=RegExp(`^${this.group}`),s=0;for(let o=0;o<this.storage.length;o++)if(this.storage.key(o).match(r)){let l=this.storage.key(o);!0===t&&(l=l.replace(r,"")),e[s++]=l}}catch{return null}return e}clear(){for(let t of this.getKeys(!1))try{this.storage.removeItem(t)}catch{return null}}get length(){try{return this.getKeys(!1).length}catch{return null}}};return Object.freeze(t)})``;self[t]=e,Object.defineProperty(self,t,{writable:!1,configurable:!1})})``;
+			(()=>{"use strict";self.addEventListener("DOMContentLoaded",async()=>{let e=new WebStorage("numberPlace_"),t="./script_1/load_2.js",a=t=>new Promise(a=>{let d=document.createElement("script"),n=e.get(t);null!=n?(d.text=n,document.head.appendChild(d),a()):(d.src=t,document.head.appendChild(d),d.onload=a)});defineProperty("load_1.js",Object.freeze({storage:e,loadScript:a,fileName:t})),await a(t)})})``;
+		</script>
+	</head>
+	<body>
+		<canvas id="sudoku_main"></canvas>
+		<canvas id="sudoku_number"></canvas>
+		<textarea id="cui" rows="7"></textarea>
+		<p id="p"></p>
+	</body>
+</html>
