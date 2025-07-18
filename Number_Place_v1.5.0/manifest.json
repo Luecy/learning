@@ -1,0 +1,12 @@
+{
+	"name": "ナンプレ",
+	"display": "standalone",
+	"start_url": "./index.html",
+	"icons": [
+		{
+			"src": "../texture/icon.png",
+			"sizes": "192x192",
+			"purpose": "any maskable"
+		}
+	]
+}
