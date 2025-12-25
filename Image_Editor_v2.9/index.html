@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<style>
+			html,body,header,footer,div,span,p,label,a,button,img,textarea,canvas,input[type="file"],input[type="text"],input[type="number"],input[type="file"]::file-selector-button,textarea::placeholder,input[type="text"]::placeholder,input[type="number"]::placeholder,textarea:focus,input[type="text"]:focus,input[type="number"]:focus,button:active,input[type="file"]::file-selector-button:active,a:link,a:visited,textarea:read-only{all:initial;display:block;box-sizing:border-box;position:relative;font-size:100%;font-family:system-ui,sans-serif;line-height:1.5}head,script{display:none}span,a,button,img,label,input[type="text"],input[type="number"],input[type="file"]::file-selector-button,input[type="text"]:focus,input[type="number"]:focus,button:active,input[type="file"]::file-selector-button:active,a:link,a:visited{display:inline-block}html{height:100%;background-color:#fff}body{height:100%;margin:0;padding:calc(1rem / 16 * 8)}body,div,span,p{word-break:break-all}p{margin:0;margin-bottom:1.5rem}textarea,input[type="text"],input[type="number"],textarea:focus,input[type="text"]:focus,input[type="number"]:focus,textarea:read-only{border:solid calc(1rem / 16) gray;border-radius:calc(1rem / 16 * 2);padding:calc(1rem / 16) calc(1rem / 16 * 3);line-height:calc(1 / 16 * 20)}textarea:focus,input[type="text"]:focus,input[type="number"]:focus{outline:none;border:solid calc(1rem / 16 * 2) orange;padding:0 calc(1rem / 16 * 2)}textarea,textarea:focus,textarea:read-only{width:100%;resize:none;white-space:pre;line-height:1.5}textarea:read-only{background-color:gray;border-color:#000}textarea:read-only:focus{border:solid calc(1rem / 16) #000;border-radius:calc(1rem / 16 * 2);padding:calc(1rem / 16) calc(1rem / 16 * 3)}textarea::placeholder,input[type="text"]::placeholder,input[type="number"]::placeholder{color:gray}button,input[type="file"]::file-selector-button,button:active,input[type="file"]::file-selector-button:active{border:solid calc(1rem / 16) gray;border-radius:calc(1rem / 16 * 2);padding:0 calc(1rem / 16 * 8);background-color:#eee;line-height:calc(1 / 16 * 22)}button:active,input[type="file"]::file-selector-button:active{border-color:#000;background-color:#fff}input[type="file"]{width:100%;text-overflow:ellipsis;white-space:nowrap}input[type="file"]::file-selector-button,input[type="file"]::file-selector-button:active{margin-right:calc(1rem / 16 * 2)}a:link,a:visited{text-decoration:underline}a:link{color:blue}a:visited{color:purple}canvas{width:100%}img{width:100%}input[type="checkbox"],input[type="radio"]{display:inline-block;box-sizing:border-box;position:relative;vertical-align:top;width:1.5rem;height:1.5rem;left:0rem;top:0rem;margin:0rem}header{padding-top:5rem}#statusBar{position:fixed;left:0;top:0;z-index:1;padding:.25rem .5rem;background-color:#eee;border:solid 0 #fff;white-space:normal;line-height:1.5;width:100%;height:4rem;margin:0;overflow:scroll}#button_cancel{position:fixed;right:calc(1rem / 16 * 8);top:4rem;z-index:1}#div_download{border:solid 1px #000;padding:1rem}#input_jpg{visibility:hidden}.div_radio{overflow:scroll;white-space:nowrap;margin:0rem 0;border:solid calc(1rem / 16) #000;padding:calc(1rem / 16 * 11)}.span_radio{background-color:#eee;margin-right:.5rem}#div_UI{border:solid 1px #000;padding:1rem}.div_UI{display:none}#UI_resize{display:inline-block}canvas{margin:1rem 0}img{margin:1rem 0}footer{padding-top:8rem}
+		</style>
+		<title>Image Editor</title>
+	</head>
+	<body>
+		<header>
+			<p id="statusBar">ページを読み込んでいます</p>
+			<button type="button" id="button_cancel">キャンセル</button>
+		</header>
+		<input type="file" id="input_file">
+		<button type="button" id="button_reset">reset</button>
+		<div id="div_download">
+			<input type="text" id="input_filename" value="00.png" placeholder="file name"><br>
+			<label><input type="radio" name="image_type" id="radio_png" checked>PNG</label><br>
+			<label><input type="radio" name="image_type" id="radio_jpg">JPEG</label>
+			<input type="number" id="input_jpg" value="0.85" placeholder="JPEGの圧縮率"><br>
+			<button id="button_download" type="button">ダウンロード</button>
+			<a id="anchor">download</a>
+		</div>
+		<div class="div_radio">
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_resize" class="input_radio" checked>
+				resize
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_enlarge" class="input_radio">
+				enlarge
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_reverse" class="input_radio">
+				reverse
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_space" class="input_radio">
+				space
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_cut" class="input_radio">
+				cut
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_cut2" class="input_radio">
+				cut2
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_insert" class="input_radio">
+				insert
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_rotate" class="input_radio">
+				rotate
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_decreaseColor" class="input_radio">
+				decrease color
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_resizeInHalf" class="input_radio">
+				resize in half
+			</label>
+			<label class="span_radio">
+				<input type="radio" name="radio" id="radio_changeLightness" class="input_radio">
+				change lightness
+			</label>
+		</div>
+		<div id="div_UI">
+			<div id="UI_resize" class="div_UI">
+				<input type="number" id="input_resize_width" placeholder="width">
+				<input type="number" id="input_resize_height" placeholder="height">
+				<input type="number" id="input_resize_ratio" placeholder="倍率">
+				<button id="button_resize" type="button">resize</button>
+			</div>
+			<div id="UI_enlarge" class="div_UI">
+				<input type="number" id="input_enlarge" placeholder="自然数">
+				<button id="button_enlarge" type="button">enlarge</button>
+			</div>
+			<div id="UI_reverse" class="div_UI">
+				<button id="button_reverse" type="button">左右反転</button>
+			</div>
+			<div id="UI_space" class="div_UI">
+				<input type="number" id="input_space_left" placeholder="left">
+				<input type="number" id="input_space_right" placeholder="right">
+				<input type="number" id="input_space_top" placeholder="top">
+				<input type="number" id="input_space_bottom" placeholder="bottom">
+				<input type="text" id="input_space_background" value="#000000ff" placeholder="background-color">
+				<button id="button_space" type="button">実行</button>
+			</div>
+			<div id="UI_cut" class="div_UI">
+				<input type="number" id="input_cut_left" placeholder="left">
+				<input type="number" id="input_cut_right" placeholder="right">
+				<input type="number" id="input_cut_top" placeholder="top">
+				<input type="number" id="input_cut_bottom" placeholder="bottom">
+				<button id="button_cut" type="button">cut</button>
+			</div>
+			<div id="UI_cut2" class="div_UI">
+				<input type="number" id="input_cut2_x" placeholder="x">
+				<input type="number" id="input_cut2_y" placeholder="y">
+				<input type="number" id="input_cut2_width" placeholder="width">
+				<input type="number" id="input_cut2_height" placeholder="height">
+				<button id="button_cut2" type="button">cut2</button>
+			</div>
+			<div id="UI_insert" class="div_UI">
+				<input type="file" id="input_file_insert">
+				<input type="number" id="input_insert_left" placeholder="left">
+				<input type="number" id="input_insert_top" placeholder="top">
+				<button id="button_insert" type="button">insert</button>
+			</div>
+			<div id="UI_rotate" class="div_UI">
+				<button id="button_rotate" type="button">rotate</button>
+			</div>
+			<div id="UI_decreaseColor" class="div_UI">
+				<button type="button" id="button_decrease4bit">rgb4bit</button>
+				<button type="button" id="button_decrease2bit">rgb2bit</button>
+				<button type="button" id="button_grayscale">grayscale</button>
+				<button type="button" id="button_monochrome">monochrome</button>
+				<button type="button" id="button_alpha1bit">alpha1bit</button>
+			</div>
+			<div id="UI_resizeInHalf" class="div_UI">
+				<button type="button" id="button_resizeInHalf">resize in half</button>
+			</div>
+			<div id="UI_changeLightness" class="div_UI">
+				<input type="number" id="input_changeLightness" placeholder="increase">
+				<button type="button" id="button_changeLightness">change lightness</button>
+			</div>
+		</div>
+		Canvas.style.width<input type="text" id="input_canvasSize" value="100%" placeholder="default: 100%">
+		<button type="button" id="button_undo">undo/redo</button>
+		<div id="div_canvasSize"></div>
+		<canvas id="canvas" width=256 height=256></canvas>
+		<button type="button" id="button_canvasToImg">img要素に描画</button>
+		<button type="button" id="button_imgToCanvas">img要素から描画</button>
+		<img id="img">
+		<footer></footer>
+		<div>
+			<script>
+				(()=>{"use strict";let t="editImage.js",a=Object.prototype.toString,e=async(t,e=document.querySelector("canvas"),i,n,l=0,r=0,d=!0)=>{if("[object File]"!==a.call(t)&&"[object Blob]"!==a.call(t))return null;let h=new FileReader,g=new Image;return h.readAsDataURL(t),g.src=await new Promise(t=>{h.onload=()=>{t(h.result)}}),await g.decode().then(()=>{let t=e.getContext("2d");void 0==i&&(i=g.naturalWidth),void 0==n&&(n=g.naturalHeight),void 0==l&&(l=0),void 0==r&&(r=0),d&&(e.width=i,e.height=n),t.drawImage(g,l,r,i,n)}).catch(t=>t)},i=async(t,e)=>{let i=(()=>"[object HTMLCanvasElement]"===a.call(e)?e:document.createElement("canvas"))``,n=i.getContext("2d");return"[object ImageData]"===a.call(t)?(i.width=t.width,i.height=t.height,n.putImageData(t,0,0),i):"[object HTMLImageElement]"===a.call(t)||"[object ImageBitmap]"===a.call(t)||"[object HTMLCanvasElement]"===a.call(t)?("[object HTMLImageElement]"===a.call(t)?(i.width=t.naturalWidth,i.height=t.naturalHeight):(i.width=t.width,i.height=t.height),n.drawImage(t,0,0),i):"[object File]"===a.call(t)||"[object Blob]"===a.call(t)?new Promise(a=>{let e=new FileReader;e.readAsDataURL(t),e.onload=()=>{let t=new Image;t.src=e.result,t.onload=()=>{i.width=t.naturalWidth,i.height=t.naturalHeight,n.drawImage(t,0,0),a(i)}}}):void 0},n=async(t,e=!1)=>{if("[object ImageData]"===a.call(t)){if(!e)return t;{let n=new Uint8ClampedArray(t.data.length);for(let l=0;l<n.length;l++)n[l]=t.data[l];return new ImageData(n,t.width,t.height)}}if("[object HTMLCanvasElement]"===a.call(t)){let r=t.getContext("2d");return r.getImageData(0,0,t.width,t.height)}{let d=await i(t),h=d.getContext("2d");return h.getImageData(0,0,d.width,d.height)}},l=async(t,e="image/png",n=.85,l=!1)=>{if(("[object Blob]"===a.call(t)||"[object File]"===a.call(t))&&!1==l)return t;let r=await i(t);return new Promise(t=>{r.toBlob(a=>{t(a)},e,n)})},r=async t=>{if("[object HTMLImageElement]"===a.call(t))return t;{let e=await l(t),i=await new Promise(t=>{let a=new FileReader;a.readAsDataURL(e),a.onload=()=>{t(a.result)}}),n=new Image;return n.src=i,n.decode().then(()=>n).catch(t=>t)}},d=async t=>"[object ImageBitmap]"===a.call(t)?t:"[object HTMLImageElement]"===a.call(t)?createImageBitmap(t,0,0,t.naturalWidth,t.naturalHeight):createImageBitmap(t),h=async(t,a)=>{if("canvas"===a)return await i(t);if("imageElement"===a)return await r(t);if("imageData"===a)return await n(t);if("imageBitmap"===a)return await d(t);if("blob"===a)return await l(t)},g=(()=>{let t=(t=0)=>new Promise(a=>{setTimeout(a,t)});return async(a,e,i)=>{await t();let n=Math.trunc(i/100),l=i%100,r=0;for(let d=0;d<100;d++){for(let h=0;h<n;h++)a();r<l&&(a(),r++),e(),await t()}}})``,w=async(t,a,i,n="imageData")=>{if(!Number.isInteger(a)||a<1||!Number.isInteger(i)||i<1)return null;let r=await l(t),d=document.createElement("canvas");return await e(r,d,a,i),await h(d,n)},c=async(t,a,e,i="imageData",l)=>{let r=await n(t);if(!Number.isInteger(a)||a<2)return null;void 0==e&&(e=document.createElement("canvas")),void 0==l&&(l=()=>{}),e.width=r.width*a,e.height=r.height*a;{let d=e.getContext("2d"),w=r.data.length/4,c=0,o=0,$=0,u=1;return await g(()=>{let t=r.data[$++],i=r.data[$++],n=r.data[$++],l=r.data[$++];d.fillStyle=`rgba(${t}, ${i}, ${n}, ${l})`,d.fillRect(c,o,a,a),c<e.width-a?c+=a:(c=0,o+=a)},()=>{l(u),u++},w),await h(e,i)}},o=async(t,a="imageData")=>{let e=document.createElement("canvas"),i=e.getContext("2d"),n=await r(t),l=n.naturalWidth,d=n.naturalHeight;return e.width=d,e.height=l,i.rotate(90*Math.PI/180),i.translate(0,-d),i.drawImage(n,0,0,l,d),await h(e,a)},$=async(t,a="imageData")=>{let e=await n(t),i=e.width,l=e.height,r=new ImageData(i,l),d=0,g=4*i-4;for(let w=0;w<l;w++){for(let c=0;c<i;c++){for(let o=0;o<4;o++)r.data[g]=e.data[d],d++,g++;g-=8}g+=8*i}return await h(r,a)},u=(()=>{let t=t=>((!Number.isInteger(t=Number(t))||t<0)&&(t=0),t);return async(a,e,i,l,r,d="#000000ff",g="imageData")=>{e=t(e),i=t(i),l=t(l),r=t(r);{let w=await n(a),c=document.createElement("canvas"),o=c.getContext("2d");return c.width=w.width+e+i,c.height=w.height+l+r,o.fillStyle=d,o.fillRect(0,0,c.width,c.height),o.putImageData(w,e,l),await h(c,g)}}})``,s=async(t,a,e,i,l,r="imageData")=>{let d=document.createElement("canvas"),g=d.getContext("2d"),w=await n(t);return d.width=w.width-(a+e),d.height=w.height-(i+l),g.putImageData(w,-a,-i),await h(d,r)},m=async(t,a=0,e=0,n=1,l=1,r="imageData")=>{let d=await i(t),g=d.getContext("2d"),w=g.getImageData(a,e,n,l);return await h(w,r)},f=async(t,a,e,l,d,g="imageData")=>{let w=(()=>void 0==d?document.createElement("canvas"):d)``,c=w.getContext("2d");return t=await n(t),a=await r(a),await i(t,w),c.drawImage(a,e,l),h(w,g)},_=(()=>{let t=t=>17*(t=Math.round(t/17)),a=t=>85*(t=Math.round(t/85)),e=(t,a,e)=>{let i=[t,a,e];return i.sort((t,a)=>a-t),Math.round((i[0]+i[2])/2)};return async(i,l=null,r=null,d="imageData",w)=>{w||(w=()=>{});let c=await n(i),o=new ImageData(c.width,c.height),$=c.data.length/4,u=0,s=1;return await g(()=>{if("4bit"==l)for(let i=0;i<3;i++)o.data[u]=t(c.data[u]),u++;else if("2bit"==l)for(let n=0;n<3;n++)o.data[u]=a(c.data[u]),u++;else if("grayscale"==l){let d=e(c.data[u],c.data[u+1],c.data[u+2]);o.data[u]=d,o.data[u+1]=d,o.data[u+2]=d,u+=3}else if("monochrome"==l){let h=e(c.data[u],c.data[u+1],c.data[u+2]);h=h>=128?255:0,o.data[u]=h,o.data[u+1]=h,o.data[u+2]=h,u+=3}else for(let g=0;g<3;g++)o.data[u]=c.data[u],u++;"4bit"==r?o.data[u]=t(c.data[u]):"1bit"==r?c.data[u]>0?o.data[u]=255:o.data[u]=0:!1===r?o.data[u]=255:o.data[u]=c.data[u],u++},()=>{w(s),s++},$),h(o,d)}})``,b=async(t,a="imageData")=>{let e=await (async()=>{let a=await n(t);if(a.width%2==1||a.height%2==1){let e=document.createElement("canvas"),i=e.getContext("2d"),l=(()=>{let t=a.width;return t%2==1?t+1:t})``,r=(()=>{let t=a.height;return t%2==1?t+1:t})``;e.width=l,e.height=r,i.putImageData(a,0,0),a=i.getImageData(0,0,l,r)}return a})``,i=new Uint8ClampedArray(e.data.length/4),l=e.width/2,r=e.height/2,d=0,g=0,w;for(let c=0;c<r;c++){for(let o=0;o<l;o++)i[d]=e.data[g],i[d+1]=e.data[g+1],i[d+2]=e.data[g+2],i[d+3]=e.data[g+3],d+=4,g+=8;g+=4*e.width}return await h(w=new ImageData(i,l,r),a)},y=async(t,a=16,e="imageData")=>{let i=await n(t,!0);for(let l=0;l<i.data.length;l+=4)i.data[l]+=a,i.data[l+1]+=a,i.data[l+2]+=a;return await h(i,e)};if(!0===self.hasOwnProperty(t))throw Error(`window["${t}"] is in conflict`);for(let I in self[t]=Object.preventExtensions({drawImagefileToCanvas:e,imageToCanvas:i,toImageData:n,imageToBlob:l,toImageElement:r,toImageBitmap:d,changeType:h,asyncLoop:g,resize:w,enlarge:c,rotate:o,reverse:$,space:u,cut:s,cut2:m,insert:f,decreaseColor:_,resizeInHalf:b,changeLightness:y}),self[t])Object.defineProperty(self[t],I,{writable:!1});Object.defineProperty(self,t,{writable:!1})})``;
+				(()=>{"use strict";let e=new Map([["self",["defineProperty","freezeProperty","$","sleep","downloadFile","download","canvasToURL","drawImagefileToCanvas"]],["Math",["randomInt"]],["Blob.prototype",["uint8Array","dataURL"]],["String.prototype",["atob","btoa","toUTF8","toUTF16","base16Decode","normalizeNewline","trimIndent"]],["Uint8Array.prototype",["btoa","text","loop","random","base16Encode"]]]),t=(e,t,r="self",n=!1,l=!0,o=!0)=>{let a=e=>{let t=e.split("."),r=self;for(let n of t)r=r[n];return r},i=(e="self",t=[""])=>{"string"==typeof t&&(t=[t]);let r=a(e);for(let n of t)try{if(!0===r.hasOwnProperty(n))throw Error(`[${e}.${n}] is in conflict`)}catch(l){console.error(l)}};!1===Array.isArray(e)&&(e=[e]),!1===Array.isArray(t)&&(t=[t]),i(r,e),r=a(r);for(let f=0;f<t.length;f++)Object.defineProperty(r,e[f],{value:t[f],configurable:l,writable:n,enumerable:o})},r=[t,(e,t=self)=>{"string"==typeof e&&(e=[e]);for(let r=0;r<e.length;r++)Object.defineProperty(t,e[r],{configurable:!1,enumerable:!0,writable:!1})},e=>{let t=document.querySelectorAll(e);return 1===t.length?t[0]:t},(e=0)=>new Promise(t=>{setTimeout(t,e)}),(e,t="00",r=document.querySelector("a"))=>{"[object Uint8Array]"===toString.call(e)&&(e=new Blob([e]));{let n=URL.createObjectURL(e);return""==t&&(t="00.txt"),r.download=t,r.href=n,n}},(e,t="00")=>{let r=document.createElement("a");"[object Uint8Array]"===toString.call(e)&&(e=new Blob([e]));{let n=URL.createObjectURL(e);r.href=n,r.download=t,r.click(),URL.revokeObjectURL(n)}},(e=document.querySelector("canvas"),t="image/png",r=.85)=>new Promise(n=>{e.toBlob(e=>{let t=URL.createObjectURL(e);n(t)},t,r)}),async(e,t=document.querySelector("canvas"),r,n,l=0,o=0,a=!0)=>{if("[object File]"!==toString.call(e)&&"[object Blob]"!==toString.call(e))return null;let i=new FileReader,f=new Image;return i.readAsDataURL(e),f.src=await new Promise(e=>{i.onload=()=>{e(i.result)}}),await f.decode().then(()=>{let e=t.getContext("2d");void 0==r&&(r=f.naturalWidth),void 0==n&&(n=f.naturalHeight),void 0==l&&(l=0),void 0==o&&(o=0),a&&(t.width=r,t.height=n),e.drawImage(f,l,o,r,n)}).catch(e=>e)},(e=255,t=0)=>Math.floor(Math.random()*(e-t+1)+t),async function(){let e=await this.arrayBuffer();return new Uint8Array(e)},function(){return new Promise(e=>{let t=new FileReader;t.readAsDataURL(this),t.onload=()=>{e(t.result)}})},function(){let e=atob(this.replace(/.*,/,"")),t=new Uint8Array(e.length);for(let r=0;r<e.length;r++)t[r]=e.charCodeAt(r);return t},async function(){let e=new Blob([this]),t=await e.arrayBuffer(),r=new Uint8Array(t),n="";for(let l of r)n+=String.fromCharCode(l);return btoa(n)},function(){return new TextEncoder().encode(this)},function(e,t=!1){let r=(()=>{let e=Array(this.length);for(let t=0;t<this.length;t++){let r=this.charCodeAt(t);e[t]=r.toString(16).padStart(4,"0")}return e.join("").split("")})``,n=new Uint8Array(2*this.length);for(let l=0,o=0;l<r.length;l++){let a=r[o]+r[o+1];o+=2,n[l]=parseInt(a,16)}if(e=(()=>"be"===e||"BE"===e?"BE":"le"===e||"LE"===e?"LE":void 0)``,t=(()=>{let r=[254,255];return void 0===e||"BE"===e&&!0==t?r:"LE"===e&&!0==t&&[255,254]})``,"LE"===e)for(let i=0;i<n.length;i+=2){let f=n[i],c=n[i+1];n[i]=c,n[i+1]=f}if(!1!==t){let h=new Uint8Array(n.length+2),$=0;for(let u of(h[$++]=t[0],h[$++]=t[1],n))h[$++]=u;return h}return n},function(){let e=this.replace(/[^0-9A-Fa-f]/g,"").split(""),t=new Uint8Array(e.length/2);for(let r=0,n=0;r<t.length;r++){let l=e[n]+e[n+1];t[r]=parseInt(l,16),n+=2}return t},function(e="\n"){return this.replace(/\r\n|\r|\n/g,e)},function(e=!0,t=!0){let r=this.replace(/^ +|^\t+/mg,"");return!0==e&&(r=r.trimStart()),!0==t&&(r=r.trimEnd()),r},function(){let e="";for(let t of this)e+=String.fromCharCode(t);return btoa(e)},function(e="UTF-8"){return"UTF-16"===e&&(e="UTF-16BE"),new Promise(t=>{let r=new Blob([this]),n=new FileReader;n.readAsText(r,e),n.onload=()=>{t(n.result)}})},function(e=0,t=255,r=0,n=this.length-1){let l=e;for(let o=r;o<=n;o++)this[o]=l,++l>t&&(l=e);return this},function(e=0,t=255,r=0,n=this.length-1){for(let l=r;l<=n;l++)this[l]=Math.floor(Math.random()*(t-e+1)+e);return this},function(e="",t=!0,r=!0){let n=Array(this.length);for(let l=0;l<n.length;l++)n[l]=this[l].toString(16),!0===r&&(n[l]=n[l].toUpperCase()),!0===t&&(n[l]=n[l].padStart(2,"0"));return n.join(e)}],n=0;for(let l of e){let o=l[0],a=l[1],i=(()=>{let e=Array(a.length);for(let t=0;t<e.length;t++)e[t]=r[n],n++;return e})``;t(a,i,o)}})``;
+				(()=>{"use strict";let{imageToCanvas:n,toImageData:t}=self["editImage.js"],e={loading:!0,cancel:!1},a=$("#statusBar"),i=$("#input_filename"),s=$("#radio_png"),r=$("#radio_jpg"),d=$("#input_jpg"),l=$("#anchor"),c=$("#div_canvasSize"),u=$("#canvas"),g=u.getContext("2d"),o=()=>{c.innerText="width: "+u.width+"\nheight: "+u.height},h=(()=>{let e=[null,null],i=async()=>{a.innerText="undo中",await sleep();let t=e[1];e[1]=e[0],e[0]=t,await n(t,u),a.innerText="undoしました"};return i.save=async n=>{e[1]=e[0],e[0]=await t(n)},i})``;defineProperty("constant.js",Object.freeze({state:e,p_state:a,input_filename:i,radio_png:s,radio_jpg:r,input_jpg:d,anchor:l,div_canvasSize:c,canvas:u,context:g,showCanvasSize:o,undo:h}))})``;
+				(()=>{"use strict";let t=Object.prototype.toString,{state:a,p_state:i,input_filename:n,radio_png:e,radio_jpg:l,input_jpg:c,canvas:o,context:r,showCanvasSize:u,undo:w}=self["constant.js"],{imageToCanvas:s,imageToBlob:d,toImageElement:g,resize:f,enlarge:v,rotate:h,reverse:y,space:T,cut:x,cut2:p,insert:_,decreaseColor:b,resizeInHalf:k,changeLightness:m}=self["editImage.js"];delete self["editImage.js"];let j=(t,a)=>{if(/\D/.test(t)){if(1==a)throw Error("自然数を入力してください");throw Error("0以上の整数を入力してください")}if(1==a&&0==Number(t))throw Error("自然数を入力してください");return Number(t)};$("#button_cancel").onclick=()=>{a.cancel=!0};{let z=$("#input_file"),I=$("#button_reset"),L,D;z.onchange=async()=>{if(!0!=a.loading&&void 0!=z.files[0]){if(a.loading=!0,i.innerText="画像を読み込んでいます",await sleep(),await drawImagefileToCanvas(L=z.files[0],o)!==void 0){a.loading=!1,i.innerText="画像を選択してください";return}D=L,u(),await w.save(o),a.loading=!1,i.innerText="画像を読み込みました"}},I.onclick=async()=>{if(!0!=a.loading){if(a.loading=!0,i.innerText="リセット中",await sleep(),void 0==D){i.innerText="画像ファイルが読み込まれていません",a.loading=!1;return}await drawImagefileToCanvas(D,o),u(),await w.save(o),a.loading=!1,i.innerText="リセットしました"}}}{let U=t=>{let a=n.value;a=a.replace(/\.\w*$/,""),n.value=a+t};e.oninput=()=>{c.style.visibility="hidden",U(".png")},l.oninput=()=>{c.style.visibility="visible",U(".jpg")}}$("#button_download").onclick=async()=>{if(!0==a.loading)return;a.loading=!0,i.innerText="ダウンロード準備中",await sleep(),URL.revokeObjectURL(anchor.href);let t=n.value,r=(()=>e.checked?"image/png":l.checked?"image/jpeg":void 0)``,u=(()=>{let t=Number(c.value);return t<0||t>1?(c.value=.85,c.value=.85,.85):(c.value=t,t)})``;anchor.download=t;try{anchor.href=await canvasToURL(o,r,u),i.innerText="ダウンロード可能"}catch(w){i.innerText=w}finally{a.loading=!1}};{let H=$(".input_radio"),R=$(".div_UI"),S=()=>{for(let t of R)t.style.display="none"};for(let A=0;A<H.length;A++)H[A].oninput=()=>{S(),R[A].style.display="inline"}}{let C=$("#input_resize_width"),E=$("#input_resize_height"),M=$("#input_resize_ratio");$("#button_resize").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="リサイズ中",await sleep();try{let t,n,e;if(""==M.value)n=Number(C.value),e=Number(E.value);else{let l=Number(M.value);n=Math.round(o.width*l),e=Math.round(o.height*l)}if(n<=0||e<=0)throw Error("自然数を入力してください");if(n>16384||e>16384)throw Error("最大サイズを超えています");if(t=await f(o,n,e),a.cancel)throw"処理を中断しました";await s(t,o),u(),await w.save(o),i.innerText="リサイズしました"}catch(c){i.innerText=c}finally{a.loading=!1}}}}{let O=$("#input_enlarge"),q=t=>{if(i.innerText=`拡大中：${t}%`,a.cancel)throw"処理を中断しました"};$("#button_enlarge").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="拡大中",await sleep();try{let t=Number(O.value);if(/\D/.test(t)||t<2)throw Error("2以上の自然数を入力してください");let n=await v(o,t,void 0,void 0,q);await s(n,o),u(),await w.save(o),i.innerText="拡大しました"}catch(e){i.innerText=e}finally{a.loading=!1}}}}$("#button_reverse").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="左右反転中",await sleep();try{let t=await y(o);if(a.cancel)throw"処理を中断しました";await s(t,o),await w.save(o),i.innerText="左右反転完了"}catch(n){i.innerText=n}finally{a.loading=!1}}};{let B=$("#input_space_left"),F=$("#input_space_right"),G=$("#input_space_top"),J=$("#input_space_bottom"),K=$("#input_space_background");$("#button_space").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="空白追加中",await sleep();try{let t=j(B.value),n=j(F.value),e=j(G.value),l=j(J.value),c=K.value,r=await T(o,t,n,e,l,c);if(a.cancel)throw"処理を中断しました";await s(r,o),u(),await w.save(o),i.innerText="空白追加完了"}catch(d){i.innerText=d}finally{a.loading=!1}}}}{let N=$("#input_cut_left"),P=$("#input_cut_right"),Q=$("#input_cut_top"),V=$("#input_cut_bottom");$("#button_cut").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="切り取り中",await sleep();try{let t=j(N.value),n=j(P.value),e=j(Q.value),l=j(V.value),c=await x(o,t,n,e,l);if(a.cancel)throw"処理を中断しました";await s(c,o),u(),await w.save(o),i.innerText="切り取り完了"}catch(r){i.innerText=r}finally{a.loading=!1}}}}{let W=$("#input_cut2_x"),X=$("#input_cut2_y"),Y=$("#input_cut2_width"),Z=$("#input_cut2_height");$("#button_cut2").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="切り取り中",await sleep();try{let t=j(W.value),n=j(X.value),e=j(Y.value,1),l=j(Z.value,1),c=await p(o,t,n,e,l);if(a.cancel)throw"処理を中断しました";await s(c,o),u(),await w.save(o),i.innerText="切り取り完了"}catch(r){i.innerText=r}finally{a.loading=!1}}}}{let tt=$("#input_file_insert"),ta=$("#input_insert_left"),ti=$("#input_insert_top");$("#button_insert").onclick=async()=>{if(!0!=a.loading&&void 0!=tt.files[0]){a.loading=!0,a.cancel=!1,i.innerText="画像を差し込み中",await sleep();try{let n=j(ta.value),e=j(ti.value),l=await g(tt.files[0]);if(a.cancel)throw"処理を中断しました";if("[object HTMLImageElement]"!==t.call(l))throw Error("画像の差し込みに失敗しました");await _(o,l,n,e,o),await w.save(o),i.innerText="画像を差し込みました"}catch(c){i.innerText=c}finally{a.loading=!1}}}}$("#button_rotate").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="画像を回転中",await sleep();try{let t=await h(o);if(a.cancel)throw"処理を中断しました";await s(t,o),u(),await w.save(o),i.innerText="回転しました"}catch(n){i.innerText=n}finally{a.loading=!1}}};{let tn=t=>{if(i.innerText=`減色中：${t}%`,a.cancel)throw"処理を中断しました"},te=async(t,n)=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="減色中",await sleep();try{let e=await b(o,t,n,"imageData",tn);await s(e,o),u(),await w.save(o),i.innerText="減色しました"}catch(l){i.innerText=l}finally{a.loading=!1}}};$("#button_decrease4bit").onclick=()=>{te("4bit","4bit")},$("#button_decrease2bit").onclick=()=>{te("2bit","1bit")},$("#button_grayscale").onclick=()=>{te("grayscale")},$("#button_monochrome").onclick=()=>{te("monochrome")},$("#button_alpha1bit").onclick=()=>{te(void 0,"1bit")}}$("#button_resizeInHalf").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="画像を半分にリサイズ中",await sleep();try{let t=await k(o);if(a.cancel)throw"処理を中断しました";await s(t,o),u(),await w.save(o),i.innerText="半分にリサイズしました"}catch(n){i.innerText=n}finally{a.loading=!1}}};{let tl=$("#input_changeLightness");$("#button_changeLightness").onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="画像の明るさを変更中",await sleep();try{let t=await m(o,Number(tl.value));if(a.cancel)throw"処理を中断しました";await s(t,o),u(),await w.save(o),i.innerText="明るさを変更しました"}catch(n){i.innerText=n}finally{a.loading=!1}}}}{let tc=$("#input_canvasSize");tc.oninput=()=>{o.style.width=tc.value}}{let to=$("#button_undo");to.onclick=async()=>{!0!=a.loading&&(a.loading=!0,await w(),u(),a.loading=!1)}}{let tr=$("#button_canvasToImg"),tu=$("#button_imgToCanvas"),tw=$("#img");tr.onclick=async()=>{if(!0!=a.loading){a.loading=!0,a.cancel=!1,i.innerText="img要素に描画中",await sleep();try{let t=await d(o),n=await (()=>new Promise(a=>{let i=new FileReader;i.readAsDataURL(t),i.onload=()=>{a(i.result)}}))``;if(a.cancel)throw"処理を中断しました";tw.src=n,i.innerText="img要素に描画しました"}catch(e){i.innerText=e}finally{a.loading=!1}}},tu.onclick=async()=>{if(!0!=a.loading){if(""===tw.src){i.innerText="img要素がありません";return}a.loading=!0,a.cancel=!1,i.innerText="img要素からcanvasに描画中",await sleep();try{let t=tw.src,n=t.atob(),e=new Blob([n]);if(await sleep(),a.cancel)throw"処理を中断しました";await s(e,o),u(),await w.save(o),i.innerText="img要素からcanvasに描画しました"}catch(l){i.innerText=l}finally{a.loading=!1}}}}})``;
+				(async()=>{"use strict";let{state:t,p_state:a,canvas:e,context:i,showCanvasSize:$,undo:l}=self["constant.js"];i.fillStyle="#000000",i.fillRect(0,0,e.width,e.height),$(),await l.save(e),await l.save(e),a.innerText="画像を選択してください",t.loading=!1})``;
+			</script>
+		</div>
+	</body>
+</html>
