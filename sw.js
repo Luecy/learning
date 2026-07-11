@@ -1,4 +1,4 @@
-const cacheName = "Github_main_v12";
+const cacheName = "Github_main_v13";
 
 self.addEventListener("activate", (event) => {
 	event.waitUntil((async () => {
