@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width">
 		<style>
-			html,body,a{all:initial;display:block;box-sizing:border-box;font:100% sans-serif;line-height:1.5}body{padding:1rem}a{margin-bottom:1rem;display:inline-block;cursor:pointer}a:link{color:blue}a:visited{color:purple}a:hover{text-decoration:underline}a:active{color:red}
+			html,body,header,footer,main,div,span,p,label,a,button,img,video,textarea,canvas,[type=text],[type=number],[type=file],::file-selector-button,::placeholder,select{all:initial;box-sizing:border-box;tab-size:4;scroll-behavior:smooth;max-width:100%;font:100%/1.5 system-ui,sans-serif;display:block;position:relative}head,script,[hidden]{display:none!important}span,label,a,button,[type=text],[type=number],::file-selector-button,select{display:inline-block}html{background-color:#fff;height:100%}body,main,div,span,p,label,a,header,footer{overflow-wrap:break-word}textarea,[type=text],[type=number],select{border:.0625rem solid gray;border-radius:.125rem;padding:.0625rem .1875rem}textarea:focus,[type=text]:focus,[type=number]:focus,select:focus{border:.125rem solid orange;padding:0 .125rem}[type=text],[type=number]{field-sizing:content;min-width:3rem;height:1.5rem}[type=text]{min-width:15rem}textarea{white-space:pre;width:100%}textarea:read-only{background-color:gray;border-color:#000}::placeholder{color:gray}button,::file-selector-button{background-color:#eee;border:.0625rem solid gray;border-radius:.125rem;height:1.5rem;padding:0 .5rem;line-height:1.375;overflow:hidden}button:active,::file-selector-button:active{background-color:#fff;border-color:#000}[type=file]{text-overflow:ellipsis;white-space:nowrap;field-sizing:content}::file-selector-button{margin-right:.125rem}a:link{color:#00f;cursor:pointer}a:visited{color:purple}a:hover{text-decoration:underline}a:active{color:red}img,video,canvas{object-fit:contain;width:100%;max-height:100%}img,canvas{image-rendering:pixelated}video,canvas{background-color:#000}[type=checkbox],[type=radio]{all:initial;appearance:auto;box-sizing:border-box;vertical-align:top;width:1.5rem;height:1.5rem;display:inline-block;position:relative}[type=range]{all:initial;appearance:auto;vertical-align:top;height:1.5rem}select{appearance:auto;vertical-align:top;height:1.5rem}body{padding:1rem}a{margin-bottom:1rem}
 		</style>
 		<link href="manifest.json" rel="manifest">
 	</head>
@@ -21,9 +21,10 @@
 		<a href="./URL_Encoding_v1.1/index.html">URL Encoding v1.1</a><br>
 		<a href="https://github.com/Luecy/learning/tree/main">https://github.com/Luecy/learning/tree/main</a><br>
 		<a href="https://luecy.github.io/learning/">https://luecy.github.io/learning/</a><br>
-		<a href="https://www.google.com">https://www.google.com</a>
+		<a href="https://www.google.com">https://www.google.com</a><br>
+		<button id="" class="" type="button">update</button>
 		<script>
-			(()=>{"use strict";let e=()=>new Promise(async(e,r)=>{try{await navigator.serviceWorker.register("sw.js"),await navigator.serviceWorker.ready,navigator.serviceWorker.controller?e():navigator.serviceWorker.addEventListener("controllerchange",()=>{e()},{once:!0})}catch(c){r(c)}});e()})``;
+			(()=>{"use strict";{let e="index.html",t=document.querySelector("button");t.onclick=async()=>{let t=await fetch(e),r=await caches.open("Github_main");await r.delete(e);try{await r.add(e),location.reload()}catch{await r.put(e,t)}}}{let r=(e="sw.js")=>new Promise(async(t,r)=>{try{await navigator.serviceWorker.register(e),await navigator.serviceWorker.ready,navigator.serviceWorker.controller?t():navigator.serviceWorker.addEventListener("controllerchange",()=>{t()},{once:!0})}catch(a){r(a)}});r()}})``;
 		</script>
 	</body>
 </html>
