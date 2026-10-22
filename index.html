@@ -24,7 +24,7 @@
 		<a href="https://www.google.com">https://www.google.com</a><br>
 		<button id="" class="" type="button">update</button>
 		<script>
-			(()=>{"use strict";{let e="index.html",t=document.querySelector("button");t.onclick=async()=>{let t=await fetch(e),r=await caches.open("Github_main");await r.delete(e);try{await r.add(e),location.reload()}catch{await r.put(e,t)}}}{let r=(e="sw.js")=>new Promise(async(t,r)=>{try{await navigator.serviceWorker.register(e),await navigator.serviceWorker.ready,navigator.serviceWorker.controller?t():navigator.serviceWorker.addEventListener("controllerchange",()=>{t()},{once:!0})}catch(a){r(a)}});r()}})``;
+			(()=>{"use strict";{let e="index.html",t=document.querySelector("button");t.onclick=async()=>{let t=await fetch(e),a=await caches.open("Github_main");await a.delete(e);let r;try{(r=await fetch(e))?(await a.put(e,r),location.reload()):await a.put(e,t)}catch{await a.put(e,t)}}}{let a=(e="sw.js")=>new Promise(async(t,a)=>{try{await navigator.serviceWorker.register(e),await navigator.serviceWorker.ready,navigator.serviceWorker.controller?t():navigator.serviceWorker.addEventListener("controllerchange",()=>{t()},{once:!0})}catch(r){a(r)}});a()}})``;
 		</script>
 	</body>
 </html>
